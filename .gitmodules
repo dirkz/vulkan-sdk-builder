@@ -1,3 +1,6 @@
 [submodule "Vulkan-Headers"]
 	path = Vulkan-Headers
 	url = git@github.com:KhronosGroup/Vulkan-Headers.git
+[submodule "Vulkan-Loader"]
+	path = Vulkan-Loader
+	url = git@github.com:KhronosGroup/Vulkan-Loader.git
