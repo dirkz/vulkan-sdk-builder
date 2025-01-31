@@ -56,21 +56,21 @@ Build -ProjectName "SPIRV-Headers"
 
 $spirvHeaderDir = "$PSScriptRoot\SPIRV-Headers"
 $spirvHeaderDir = $spirvHeaderDir -replace '\\', '/'
-$spirvToolsDefinitions = @{
+$definitions = @{
     "SPIRV-Headers_SOURCE_DIR" = $spirvHeaderDir
     SPIRV_WERROR = "OFF"
     SPIRV_SKIP_TESTS = "ON"
     SPIRV_SKIP_EXECUTABLES = "OFF"
 }
-Build -ProjectName "SPIRV-Tools" @() $spirvToolsDefinitions
+Build -ProjectName "SPIRV-Tools" @() $definitions
 
-$robinHoodHashingDefinitions = @{ RH_STANDALONE_PROJECT = "OFF" }
-Build -ProjectName "robin-hood-hashing" @() $robinHoodHashingDefinitions
+$definitions = @{ RH_STANDALONE_PROJECT = "OFF" }
+Build -ProjectName "robin-hood-hashing" @() $definitions
 
-$mimallocDefinitions = @{
+$definitions = @{
     MI_BUILD_STATIC = "ON"
     MI_BUILD_OBJECT = "OFF"
     MI_BUILD_SHARED = "OFF"
     MI_BUILD_TESTS = "OFF"
 }
-Build -ProjectName "mimalloc" @() $mimallocDefinitions
+Build -ProjectName "mimalloc" @() $definitions
