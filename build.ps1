@@ -85,8 +85,18 @@ Build "glslang" @() $definitions
 Build "valijson" @() @{}
 
 $definitions = @{
+    CMAKE_POSITION_INDEPENDENT_CODE = "ON"
+    JSONCPP_WITH_TESTS = "OFF"
+    JSONCPP_WITH_POST_BUILD_UNITTEST = "OFF"
+    JSONCPP_WITH_WARNING_AS_ERROR = "OFF"
+    JSONCPP_WITH_PKGCONFIG_SUPPORT = "OFF"
+}
+Build "jsoncpp" @() $definitions
+
+$definitions = @{
     VulkanHeaders_DIR = "$prefix\share\cmake\VulkanHeaders"
     VulkanUtilityLibraries_DIR = "$prefix\lib\cmake\VulkanUtilityLibraries"
     valijson_DIR = "$prefix\lib\cmake\valijson"
+    jsoncpp_DIR = "$prefix\lib\cmake\jsoncpp"
 }
 Build "Vulkan-Profiles" @() $definitions
