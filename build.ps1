@@ -4,5 +4,7 @@ $prefix = "$PSScriptRoot\install"
 
 Write-Host "Building $version in $build_dir"
 
-cmake -B $build_dir -S Vulkan-Headers
-cmake --install $build_dir --prefix $prefix
+$project = "Vulkan-Headers"
+$build_dir_project = "$build_dir\$project"
+cmake -B $build_dir_project -S $project
+cmake --install $build_dir_project --prefix $prefix
