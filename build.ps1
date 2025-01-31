@@ -44,3 +44,4 @@ function Build {
 Build -ProjectName "Vulkan-Headers"
 Build -ProjectName "Vulkan-Loader" -Defines @("VULKAN_HEADERS_INSTALL_DIR")
 Build -ProjectName "Vulkan-Utility-Libraries" -Defines @("VULKAN_HEADERS_INSTALL_DIR")
+Build -ProjectName "SPIRV-Headers"

@@ -13,3 +13,6 @@
 [submodule "Vulkan-Utility-Libraries"]
 	path = Vulkan-Utility-Libraries
 	url = git@github.com:KhronosGroup/Vulkan-Utility-Libraries.git
+[submodule "SPIRV-Headers"]
+	path = SPIRV-Headers
+	url = git@github.com:KhronosGroup/SPIRV-Headers.git
