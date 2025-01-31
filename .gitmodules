@@ -37,3 +37,6 @@
 [submodule "jsoncpp"]
 	path = jsoncpp
 	url = git@github.com:open-source-parsers/jsoncpp.git
+[submodule "Vulkan-ValidationLayers"]
+	path = Vulkan-ValidationLayers
+	url = git@github.com:KhronosGroup/Vulkan-ValidationLayers.git

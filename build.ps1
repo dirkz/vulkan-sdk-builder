@@ -102,3 +102,5 @@ $definitions = @{
     jsoncpp_DIR = "$prefix\lib\cmake\jsoncpp"
 }
 Build "Vulkan-Profiles" @("VULKAN_HEADERS_INSTALL_DIR") $definitions
+
+Build "Vulkan-ValidationLayers" @("VULKAN_HEADERS_INSTALL_DIR") @{}
