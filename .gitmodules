@@ -28,3 +28,6 @@
 [submodule "glslang"]
 	path = glslang
 	url = git@github.com:KhronosGroup/glslang.git
+[submodule "Vulkan-Profiles"]
+	path = Vulkan-Profiles
+	url = git@github.com:KhronosGroup/Vulkan-Profiles.git

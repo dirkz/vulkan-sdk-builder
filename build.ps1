@@ -41,6 +41,8 @@ function Build {
     Write-Host "$ProjectName"
     Write-Host "======================="
     Write-Host ""
+    Write-Host "*** definitions: $defs"
+    Write-Host ""
 
     $build_dir_project = "$build_dir\$ProjectName"
 
@@ -79,3 +81,9 @@ $definitions = @{
     ENABLE_OPT = "OFF"
 }
 Build -ProjectName "glslang" @() $definitions
+
+$definitions = @{
+    VulkanHeaders_DIR = "$prefix\share\cmake\VulkanHeaders"
+    VulkanUtilityLibraries_DIR = "$prefix\lib\cmake\VulkanUtilityLibraries"
+}
+Build -ProjectName "Vulkan-Profiles" @() $definitions
