@@ -7,6 +7,7 @@ Param(
 
 $build_dir = "$PSScriptRoot\build"
 $prefix = "$PSScriptRoot\install"
+$config = "Release"
 
 if ($Clean)
 {
@@ -45,7 +46,9 @@ function Build {
 
     $build_dir_project = "$build_dir\$ProjectName"
 
-    & cmake -B $build_dir_project -G Ninja -S $ProjectName $defs
+    & cmake -B $build_dir_project -G Ninja -S $ProjectName `
+        -DCMAKE_BUILD_TYPE="$config" `
+        $defs
     & cmake --build $build_dir_project
     & cmake --install $build_dir_project --prefix $prefix
 }
