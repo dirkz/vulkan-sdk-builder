@@ -41,8 +41,6 @@ function Build {
     Write-Host "$ProjectName"
     Write-Host "======================="
     Write-Host ""
-    Write-Host "*** defs: $defs"
-    Write-Host ""
 
     $build_dir_project = "$build_dir\$ProjectName"
 
@@ -52,8 +50,8 @@ function Build {
 }
 
 Build -ProjectName "Vulkan-Headers"
-Build -ProjectName "Vulkan-Loader" -Defines @("VULKAN_HEADERS_INSTALL_DIR")
-Build -ProjectName "Vulkan-Utility-Libraries" -Defines @("VULKAN_HEADERS_INSTALL_DIR")
+Build -ProjectName "Vulkan-Loader" @("VULKAN_HEADERS_INSTALL_DIR")
+Build -ProjectName "Vulkan-Utility-Libraries" @("VULKAN_HEADERS_INSTALL_DIR")
 Build -ProjectName "SPIRV-Headers"
 
 $spirvHeaderDir = "$PSScriptRoot\SPIRV-Headers"
@@ -65,3 +63,6 @@ $spirvToolsDefinitions = @{
     SPIRV_SKIP_EXECUTABLES = "OFF"
 }
 Build -ProjectName "SPIRV-Tools" @() $spirvToolsDefinitions
+
+$robinHoodHashingDefinitions = @{ RH_STANDALONE_PROJECT = "OFF" }
+Build -ProjectName "robin-hood-hashing" @() $robinHoodHashingDefinitions

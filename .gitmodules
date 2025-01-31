@@ -19,3 +19,6 @@
 [submodule "SPIRV-Tools"]
 	path = SPIRV-Tools
 	url = git@github.com:KhronosGroup/SPIRV-Tools.git
+[submodule "robin-hood-hashing"]
+	path = robin-hood-hashing
+	url = git@github.com:martinus/robin-hood-hashing.git
