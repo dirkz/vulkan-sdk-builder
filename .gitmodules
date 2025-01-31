@@ -31,3 +31,6 @@
 [submodule "Vulkan-Profiles"]
 	path = Vulkan-Profiles
 	url = git@github.com:KhronosGroup/Vulkan-Profiles.git
+[submodule "valijson"]
+	path = valijson
+	url = git@github.com:tristanpenman/valijson.git

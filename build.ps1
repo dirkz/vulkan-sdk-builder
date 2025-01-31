@@ -82,8 +82,11 @@ $definitions = @{
 }
 Build "glslang" @() $definitions
 
+Build "valijson" @() @{}
+
 $definitions = @{
     VulkanHeaders_DIR = "$prefix\share\cmake\VulkanHeaders"
     VulkanUtilityLibraries_DIR = "$prefix\lib\cmake\VulkanUtilityLibraries"
+    valijson_DIR = "$prefix\lib\cmake\valijson"
 }
 Build "Vulkan-Profiles" @() $definitions
