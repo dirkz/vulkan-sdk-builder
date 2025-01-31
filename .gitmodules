@@ -16,3 +16,6 @@
 [submodule "SPIRV-Headers"]
 	path = SPIRV-Headers
 	url = git@github.com:KhronosGroup/SPIRV-Headers.git
+[submodule "SPIRV-Tools"]
+	path = SPIRV-Tools
+	url = git@github.com:KhronosGroup/SPIRV-Tools.git

@@ -14,24 +14,34 @@ if ($Clean)
     Remove-Item -LiteralPath $build_dir -Force -Recurse
 }
 
-$Definitions = @{VULKAN_HEADERS_INSTALL_DIR = $prefix}
+$Definitions = @{
+    VULKAN_HEADERS_INSTALL_DIR = $prefix
+}
 
 function Build {
     Param(
         [string]$ProjectName,
-        [string[]]$Defines
+        [string[]]$Keys,
+        [hashtable]$UniqueDefinitions
     )
 
-    $defs = ""
+    $defs = @()
 
-    foreach ($def in $Defines) {
-        $definition = $Definitions[$def]
-        $defs += "-D $def=$definition"
+    foreach ($key in $Keys) {
+        $definition = $Definitions[$key]
+        $defs += "-D$key=$definition"
+    }
+
+    foreach($key in $UniqueDefinitions.Keys) {
+        $definition = $UniqueDefinitions[$key]
+        $defs += "-D$key=$definition"
     }
 
     Write-Host ""
     Write-Host "$ProjectName"
     Write-Host "======================="
+    Write-Host ""
+    Write-Host "*** defs: $defs"
     Write-Host ""
 
     $build_dir_project = "$build_dir\$ProjectName"
@@ -45,3 +55,13 @@ Build -ProjectName "Vulkan-Headers"
 Build -ProjectName "Vulkan-Loader" -Defines @("VULKAN_HEADERS_INSTALL_DIR")
 Build -ProjectName "Vulkan-Utility-Libraries" -Defines @("VULKAN_HEADERS_INSTALL_DIR")
 Build -ProjectName "SPIRV-Headers"
+
+$spirvHeaderDir = "$PSScriptRoot\SPIRV-Headers"
+$spirvHeaderDir = $spirvHeaderDir -replace '\\', '/'
+$spirvToolsDefinitions = @{
+    "SPIRV-Headers_SOURCE_DIR" = $spirvHeaderDir
+    SPIRV_WERROR = "OFF"
+    SPIRV_SKIP_TESTS = "ON"
+    SPIRV_SKIP_EXECUTABLES = "OFF"
+}
+Build -ProjectName "SPIRV-Tools" @() $spirvToolsDefinitions
