@@ -2,11 +2,11 @@ Param(
    [switch]$Clean
 )
 
-#$version = "vulkan-sdk-1.4.304"
+$version = "1.4.304" # tag is vulkan-sdk-1.4.304
 #$nl = [Environment]::NewLine
 
 $build_dir = "$PSScriptRoot\build"
-$prefix = "$PSScriptRoot\install"
+$prefix = "c:\Vulkan\$version"
 $config = "Release"
 
 if ($Clean)
@@ -108,4 +108,5 @@ Build "Vulkan-ValidationLayers" @("VULKAN_HEADERS_INSTALL_DIR") @{}
 $definitions = @{
     VMA_BUILD_SAMPLES = "ON"
 }
-Build "VulkanMemoryAllocator" @("VULKAN_HEADERS_INSTALL_DIR") $definitions
+$env:VULKAN_SDK = $prefix
+Build "VulkanMemoryAllocator" @() $definitions
