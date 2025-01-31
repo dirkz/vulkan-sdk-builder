@@ -51,10 +51,10 @@ function Build {
     & cmake --install $build_dir_project --prefix $prefix --config $config
 }
 
-Build -ProjectName "Vulkan-Headers"
-Build -ProjectName "Vulkan-Loader" @("VULKAN_HEADERS_INSTALL_DIR")
-Build -ProjectName "Vulkan-Utility-Libraries" @("VULKAN_HEADERS_INSTALL_DIR")
-Build -ProjectName "SPIRV-Headers"
+Build "Vulkan-Headers"
+Build "Vulkan-Loader" @("VULKAN_HEADERS_INSTALL_DIR")
+Build "Vulkan-Utility-Libraries" @("VULKAN_HEADERS_INSTALL_DIR")
+Build "SPIRV-Headers"
 
 $spirvHeaderDir = "$PSScriptRoot\SPIRV-Headers"
 $spirvHeaderDir = $spirvHeaderDir -replace '\\', '/'
@@ -64,10 +64,10 @@ $definitions = @{
     SPIRV_SKIP_TESTS = "ON"
     SPIRV_SKIP_EXECUTABLES = "OFF"
 }
-Build -ProjectName "SPIRV-Tools" @() $definitions
+Build "SPIRV-Tools" @() $definitions
 
 $definitions = @{ RH_STANDALONE_PROJECT = "OFF" }
-Build -ProjectName "robin-hood-hashing" @() $definitions
+Build "robin-hood-hashing" @() $definitions
 
 $definitions = @{
     MI_BUILD_STATIC = "ON"
@@ -75,15 +75,15 @@ $definitions = @{
     MI_BUILD_SHARED = "OFF"
     MI_BUILD_TESTS = "OFF"
 }
-Build -ProjectName "mimalloc" @() $definitions
+Build "mimalloc" @() $definitions
 
 $definitions = @{
     ENABLE_OPT = "OFF"
 }
-Build -ProjectName "glslang" @() $definitions
+Build "glslang" @() $definitions
 
 $definitions = @{
     VulkanHeaders_DIR = "$prefix\share\cmake\VulkanHeaders"
     VulkanUtilityLibraries_DIR = "$prefix\lib\cmake\VulkanUtilityLibraries"
 }
-Build -ProjectName "Vulkan-Profiles" @() $definitions
+Build "Vulkan-Profiles" @() $definitions
