@@ -66,3 +66,11 @@ Build -ProjectName "SPIRV-Tools" @() $spirvToolsDefinitions
 
 $robinHoodHashingDefinitions = @{ RH_STANDALONE_PROJECT = "OFF" }
 Build -ProjectName "robin-hood-hashing" @() $robinHoodHashingDefinitions
+
+$mimallocDefinitions = @{
+    MI_BUILD_STATIC = "ON"
+    MI_BUILD_OBJECT = "OFF"
+    MI_BUILD_SHARED = "OFF"
+    MI_BUILD_TESTS = "OFF"
+}
+Build -ProjectName "mimalloc" @() $mimallocDefinitions

@@ -22,3 +22,6 @@
 [submodule "robin-hood-hashing"]
 	path = robin-hood-hashing
 	url = git@github.com:martinus/robin-hood-hashing.git
+[submodule "mimalloc"]
+	path = mimalloc
+	url = git@github.com:microsoft/mimalloc.git
