@@ -43,3 +43,6 @@
 [submodule "VulkanMemoryAllocator"]
 	path = VulkanMemoryAllocator
 	url = git@github.com:GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
+[submodule "shaderc"]
+	path = shaderc
+	url = git@github.com:google/shaderc.git

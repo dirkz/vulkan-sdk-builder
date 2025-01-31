@@ -104,6 +104,9 @@ $definitions = @{
 Build "Vulkan-Profiles" @("VULKAN_HEADERS_INSTALL_DIR") $definitions
 
 Build "Vulkan-ValidationLayers" @("VULKAN_HEADERS_INSTALL_DIR") @{}
+Build "shaderc" @() @{}
+
+Exit
 
 $definitions = @{
     VMA_BUILD_SAMPLES = "ON"
