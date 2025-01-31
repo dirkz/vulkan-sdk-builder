@@ -74,3 +74,8 @@ $definitions = @{
     MI_BUILD_TESTS = "OFF"
 }
 Build -ProjectName "mimalloc" @() $definitions
+
+$definitions = @{
+    ENABLE_OPT = "OFF"
+}
+Build -ProjectName "glslang" @() $definitions

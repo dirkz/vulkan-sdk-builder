@@ -25,3 +25,6 @@
 [submodule "mimalloc"]
 	path = mimalloc
 	url = git@github.com:microsoft/mimalloc.git
+[submodule "glslang"]
+	path = glslang
+	url = git@github.com:KhronosGroup/glslang.git
