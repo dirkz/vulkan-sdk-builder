@@ -13,7 +13,7 @@ if ($Clean)
     Remove-Item -LiteralPath $build_dir -Force -Recurse
 }
 
-$Definitions = @{
+$GlobalDefinitions = @{
     VULKAN_HEADERS_INSTALL_DIR = $prefix
 }
 
@@ -27,7 +27,7 @@ function Build {
     $defs = @()
 
     foreach ($key in $Keys) {
-        $definition = $Definitions[$key]
+        $definition = $GlobalDefinitions[$key]
         $defs += "-D$key=$definition"
     }
 
@@ -98,4 +98,4 @@ $definitions = @{
     valijson_DIR = "$prefix\lib\cmake\valijson"
     jsoncpp_DIR = "$prefix\lib\cmake\jsoncpp"
 }
-Build "Vulkan-Profiles" @() $definitions
+Build "Vulkan-Profiles" @("VULKAN_HEADERS_INSTALL_DIR") $definitions
