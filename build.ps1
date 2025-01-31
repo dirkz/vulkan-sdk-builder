@@ -35,6 +35,7 @@ function Build {
     Write-Host ""
 
     $build_dir_project = "$build_dir\$ProjectName"
+
     & cmake -B $build_dir_project -G Ninja -S $ProjectName $defs
     & cmake --build $build_dir_project --config $config
     & cmake --install $build_dir_project --prefix $prefix --config $config
