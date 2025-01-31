@@ -104,3 +104,8 @@ $definitions = @{
 Build "Vulkan-Profiles" @("VULKAN_HEADERS_INSTALL_DIR") $definitions
 
 Build "Vulkan-ValidationLayers" @("VULKAN_HEADERS_INSTALL_DIR") @{}
+
+$definitions = @{
+    VMA_BUILD_SAMPLES = "ON"
+}
+Build "VulkanMemoryAllocator" @("VULKAN_HEADERS_INSTALL_DIR") $definitions
