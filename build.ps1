@@ -104,7 +104,17 @@ $definitions = @{
 Build "Vulkan-Profiles" @("VULKAN_HEADERS_INSTALL_DIR") $definitions
 
 Build "Vulkan-ValidationLayers" @("VULKAN_HEADERS_INSTALL_DIR") @{}
-Build "shaderc" @() @{}
+
+$definitions = @{
+    SKIP_GLSLANG_INSTALL = "ON"
+    SKIP_SPIRV_TOOLS_INSTALL = "ON"
+    SKIP_GOOGLETEST_INSTALL = "ON"
+    SHADERC_GOOGLE_TEST_DIR = "$PSScriptRoot\googletest"
+    SHADERC_SPIRV_TOOLS_DIR = "$PSScriptRoot\SPIRV-Tools"
+    SHADERC_SPIRV_HEADERS_DIR = "$PSScriptRoot\SPIRV-Headers"
+    SHADERC_GLSLANG_DIR = "$PSScriptRoot\glslang"
+}
+Build "shaderc" @() definitions
 
 Exit
 
