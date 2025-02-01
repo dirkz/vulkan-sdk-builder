@@ -52,3 +52,6 @@
 [submodule "re2"]
 	path = re2
 	url = git@github.com:google/re2.git
+[submodule "effcee"]
+	path = effcee
+	url = git@github.com:google/effcee.git
