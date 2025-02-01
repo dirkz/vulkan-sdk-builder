@@ -55,6 +55,3 @@
 [submodule "effcee"]
 	path = effcee
 	url = git@github.com:google/effcee.git
-[submodule "dawn"]
-	path = dawn
-	url = https://dawn.googlesource.com/dawn
