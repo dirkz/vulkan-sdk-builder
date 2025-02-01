@@ -131,4 +131,5 @@ $definitions = @{
     VMA_BUILD_SAMPLES = "ON"
 }
 $env:VULKAN_SDK = $prefix
+$env::Path = "$prefix\bin" + $env::Path
 Build "VulkanMemoryAllocator" @() $definitions
