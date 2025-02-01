@@ -108,7 +108,7 @@ Build "Vulkan-ValidationLayers" @("VULKAN_HEADERS_INSTALL_DIR") @{}
 
 # Note that this builds some projects _again_, only without
 # installing.
-# I could not find an option to re-use an already installed version,
+# I could not find an option to re-use an already _installed_ version,
 # it looks like shaderc insists on sources.
 $definitions = @{
     SHADERC_SKIP_TESTS = "ON"
