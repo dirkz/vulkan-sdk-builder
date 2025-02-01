@@ -125,8 +125,6 @@ $definitions = @{
 }
 Build "shaderc" @() $definitions
 
-Exit
-
 $definitions = @{
     VMA_BUILD_SAMPLES = "ON"
 }
