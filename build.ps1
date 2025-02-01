@@ -113,6 +113,7 @@ $definitions = @{
     SHADERC_SPIRV_TOOLS_DIR = "$PSScriptRoot\SPIRV-Tools"
     SHADERC_SPIRV_HEADERS_DIR = "$PSScriptRoot\SPIRV-Headers"
     SHADERC_GLSLANG_DIR = "$PSScriptRoot\glslang"
+    SHADERC_ABSL_DIR = "$PSScriptRoot\abseil-cpp"
 }
 Build "shaderc" @() definitions
 

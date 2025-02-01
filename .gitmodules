@@ -46,3 +46,6 @@
 [submodule "shaderc"]
 	path = shaderc
 	url = git@github.com:google/shaderc.git
+[submodule "abseil-cpp"]
+	path = abseil-cpp
+	url = git@github.com:abseil/abseil-cpp.git
