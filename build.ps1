@@ -107,6 +107,11 @@ Build "Vulkan-Profiles" @("VULKAN_HEADERS_INSTALL_DIR") $definitions
 Build "Vulkan-ValidationLayers" @("VULKAN_HEADERS_INSTALL_DIR") @{}
 
 $definitions = @{
+    EFFCEE_BUILD_SAMPLES = "OFF"
+    EFFCEE_BUILD_TESTING = "OFF"
+    SHADERC_SKIP_TESTS = "ON"
+    SHADERC_SKIP_EXAMPLES = "ON"
+    SHADERC_ENABLE_WGSL_OUTPUT = "OFF"
     SKIP_GLSLANG_INSTALL = "ON"
     SKIP_SPIRV_TOOLS_INSTALL = "ON"
     SKIP_GOOGLETEST_INSTALL = "ON"
@@ -117,7 +122,6 @@ $definitions = @{
     SHADERC_ABSL_DIR = "$PSScriptRoot\abseil-cpp"
     SHADERC_RE2_DIR = "$PSScriptRoot\re2"
     SHADERC_EFFCEE_DIR = "$PSScriptRoot\effcee"
-    SHADERC_TINT_DIR = "$PSScriptRoot\dawn\src\tint"
 }
 Build "shaderc" @() $definitions
 
