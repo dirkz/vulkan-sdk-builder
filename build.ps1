@@ -118,7 +118,7 @@ $definitions = @{
     SHADERC_EFFCEE_DIR = "$PSScriptRoot\effcee"
     SHADERC_TINT_DIR = "$PSScriptRoot\dawn\src\tint"
 }
-Build "shaderc" @() definitions
+Build "shaderc" @() $definitions
 
 Exit
 
