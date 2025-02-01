@@ -111,8 +111,6 @@ Build "Vulkan-ValidationLayers" @("VULKAN_HEADERS_INSTALL_DIR") @{}
 # I could not find an option to re-use an already installed version,
 # it looks like shaderc insists on sources.
 $definitions = @{
-    EFFCEE_BUILD_SAMPLES = "OFF"
-    EFFCEE_BUILD_TESTING = "OFF"
     SHADERC_SKIP_TESTS = "ON"
     SHADERC_SKIP_EXAMPLES = "ON"
     SHADERC_ENABLE_WGSL_OUTPUT = "OFF"
