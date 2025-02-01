@@ -12,6 +12,7 @@ $config = "Release"
 if ($Clean)
 {
     Remove-Item -LiteralPath $build_dir -Force -Recurse
+    Remove-Item -LiteralPath $prefix -Force -Recurse
 }
 
 $GlobalDefinitions = @{
