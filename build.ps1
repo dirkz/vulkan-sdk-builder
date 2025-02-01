@@ -128,8 +128,8 @@ $definitions = @{
 Build "shaderc" @() $definitions
 
 $definitions = @{
-    VMA_BUILD_SAMPLES = "ON"
+    VMA_BUILD_SAMPLES = "OFF"
 }
 $env:VULKAN_SDK = $prefix
-$env:Path = "$prefix\bin" + $env:Path
+$env:Path = "$prefix\bin" + ";" + $env:Path
 Build "VulkanMemoryAllocator" @() $definitions
