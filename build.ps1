@@ -106,6 +106,10 @@ Build "Vulkan-Profiles" @("VULKAN_HEADERS_INSTALL_DIR") $definitions
 
 Build "Vulkan-ValidationLayers" @("VULKAN_HEADERS_INSTALL_DIR") @{}
 
+# Note that this builds some projects _again_, only without
+# installing.
+# I could not find an option to re-use an already installed version,
+# it looks like shaderc insists on sources.
 $definitions = @{
     EFFCEE_BUILD_SAMPLES = "OFF"
     EFFCEE_BUILD_TESTING = "OFF"
