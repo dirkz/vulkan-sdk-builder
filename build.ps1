@@ -116,6 +116,7 @@ $definitions = @{
     SHADERC_ABSL_DIR = "$PSScriptRoot\abseil-cpp"
     SHADERC_RE2_DIR = "$PSScriptRoot\re2"
     SHADERC_EFFCEE_DIR = "$PSScriptRoot\effcee"
+    SHADERC_TINT_DIR = "$PSScriptRoot\dawn\src\tint"
 }
 Build "shaderc" @() definitions
 
