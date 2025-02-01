@@ -66,6 +66,7 @@ Function AddPath {
 Build "Vulkan-Headers"
 Build "Vulkan-Loader" @("VULKAN_HEADERS_INSTALL_DIR")
 Build "Vulkan-Utility-Libraries" @("VULKAN_HEADERS_INSTALL_DIR")
+
 Build "SPIRV-Headers"
 
 $spirvHeaderDir = "$PSScriptRoot\SPIRV-Headers"
@@ -142,3 +143,10 @@ $definitions = @{
 $env:VULKAN_SDK = $prefix
 AddPath "$prefix\bin"
 Build "VulkanMemoryAllocator" @() $definitions
+
+$definitions = @{
+    VULKAN_HPP_RUN_GENERATOR = "ON"
+    VULKAN_HPP_GENERATOR_BUILD = "ON"
+    VULKAN_HPP_BUILD_WITH_LOCAL_VULKAN_HPP = "OFF"
+}
+Build "Vulkan-Hpp" @() $definitions

@@ -55,3 +55,6 @@
 [submodule "effcee"]
 	path = effcee
 	url = git@github.com:google/effcee.git
+[submodule "Vulkan-Hpp"]
+	path = Vulkan-Hpp
+	url = git@github.com:KhronosGroup/Vulkan-Hpp.git
