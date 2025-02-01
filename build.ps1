@@ -53,6 +53,15 @@ function Build {
     & cmake --build $build_dir_project
     & cmake --install $build_dir_project --prefix $prefix
 }
+Function AddPath {
+    param (
+        [string]$Path
+    )
+
+    $RegexPath = [regex]::Escape($Path)
+    $Paths = $env:Path -split ';' | Where-Object { $_ -notMatch "^$regexPath\\?" }
+    $env:Path = ($Paths + $Path) -join ';'
+}
 
 Build "Vulkan-Headers"
 Build "Vulkan-Loader" @("VULKAN_HEADERS_INSTALL_DIR")
@@ -131,5 +140,5 @@ $definitions = @{
     VMA_BUILD_SAMPLES = "OFF"
 }
 $env:VULKAN_SDK = $prefix
-$env:Path = "$prefix\bin" + ";" + $env:Path
+AddPath "$prefix\bin"
 Build "VulkanMemoryAllocator" @() $definitions
