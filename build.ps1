@@ -2,7 +2,7 @@ Param(
    [switch]$Clean
 )
 
-$version = "1.4.304" # corresponding tag is vulkan-sdk-1.4.304
+$version = "1.4.313" # corresponding tag is vulkan-sdk-1.4.313
 
 $build_dir = "$PSScriptRoot\build"
 $prefix = "c:\Vulkan\$version"
