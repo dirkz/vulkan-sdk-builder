@@ -148,3 +148,7 @@ $definitions = @{
 $env:VULKAN_SDK = $prefix
 AddPath "$prefix\bin"
 Build "VulkanMemoryAllocator" @() $definitions
+
+# Note: Builds some projects again.
+# Luckily, they are submodules, so there's some control over it.
+Build "slang" @() @{}

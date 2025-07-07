@@ -58,3 +58,6 @@
 [submodule "Vulkan-Hpp"]
 	path = Vulkan-Hpp
 	url = git@github.com:KhronosGroup/Vulkan-Hpp.git
+[submodule "slang"]
+	path = slang
+	url = git@github.com:shader-slang/slang.git
